@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Customers.Data.Models.CustomerEntity>
+
+@{
+    ViewBag.Title = "Customers";
+}
+
+<h1>Customers</h1>
+
+<h3>
+    @Html.ActionLink("Add Customer", "Add")
+</h3>
+@if(Model.Count() > 0)
+{
+    <table class="table">
+    <tr style="background-color: #1b1b1b; color: white; font-size: 24px; font-weight:800">
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+          <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach(var item in Model)
+    {
+        <tr style="background-color: #ffa31a; color: black; font-size: 20px; font-weight:700">
+            <td>
+                @Html.DisplayFor(model => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Phone)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id, action="edit" }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id,  }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+    </tr>
+    }
+    </table>
+}
+else
+{
+    <h1>NO CUSTOMER FOUND</h1>
+}

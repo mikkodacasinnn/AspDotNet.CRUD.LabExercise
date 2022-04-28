@@ -1,0 +1,22 @@
+﻿@using Customers.Data.Models
+
+@{
+    var customer = ViewData["Customer"] as CustomerEntity;
+}
+
+
+<div style="background-color:#1b1b1b; padding:10px; font-size:24px; color:white; font-weight:800">
+    Id: @customer.Id
+</div>
+<div style="background-color:#ffa31a; padding:10px; font-size:24px; color:black; font-weight:800">
+    Title: @customer.FirstName
+</div>
+<div style="background-color:#1b1b1b; padding:10px; font-size:24px; color:white; font-weight:800">
+    Year: @customer.LastName
+</div>
+<div style="background-color:#ffa31a; padding:10px; font-size:24px; color:black; font-weight:800">
+    Composer: @customer.Address
+</div>
+<div style="background-color:#1b1b1b; padding:10px; font-size:24px; color:white; font-weight:800">
+    Composer: @customer.Phone
+</div>
